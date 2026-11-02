@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.bak*
+*.local.txt
+ledger/spend.lock
+.DS_Store

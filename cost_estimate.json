@@ -1,0 +1,143 @@
+{
+ "samples": 16,
+ "epochs": 2,
+ "solver_calls": 96,
+ "grader_calls": 48,
+ "avg_prompt_tokens": 1455,
+ "prompt_tokens_per_pass_16_samples": 23282,
+ "per_sample_tokens": {
+  "A1-faulty": 1685,
+  "A1-clean": 1693,
+  "A2-faulty": 1678,
+  "A2-clean": 1687,
+  "A3-faulty": 1650,
+  "A3-clean": 1650,
+  "A5-faulty": 1575,
+  "A5-clean": 1575,
+  "A8-faulty": 1534,
+  "A8-clean": 1534,
+  "S1-faulty": 1204,
+  "S1-clean": 1208,
+  "S2-faulty": 1217,
+  "S2-clean": 1215,
+  "S3-faulty": 1104,
+  "S3-clean": 1073
+ },
+ "scenarios": {
+  "low": {
+   "total_usd": 2.85,
+   "per_model": {
+    "claude-fable-5-1": {
+     "solver_usd": 1.106,
+     "grader_usd": 0.192,
+     "grader_model": "gpt-6-astra"
+    },
+    "gpt-6-astra": {
+     "solver_usd": 1.106,
+     "grader_usd": 0.038,
+     "grader_model": "gemini-4-argon"
+    },
+    "gemini-4-argon": {
+     "solver_usd": 0.221,
+     "grader_usd": 0.192,
+     "grader_model": "claude-fable-5-1"
+    }
+   },
+   "assumptions": {
+    "out": 400,
+    "gout": 100,
+    "margin": 1.0
+   }
+  },
+  "mid": {
+   "total_usd": 5.89,
+   "per_model": {
+    "claude-fable-5-1": {
+     "solver_usd": 2.432,
+     "grader_usd": 0.243,
+     "grader_model": "gpt-6-astra"
+    },
+    "gpt-6-astra": {
+     "solver_usd": 2.432,
+     "grader_usd": 0.049,
+     "grader_model": "gemini-4-argon"
+    },
+    "gemini-4-argon": {
+     "solver_usd": 0.486,
+     "grader_usd": 0.243,
+     "grader_model": "claude-fable-5-1"
+    }
+   },
+   "assumptions": {
+    "out": 1200,
+    "gout": 150,
+    "margin": 1.1
+   }
+  },
+  "high": {
+   "total_usd": 10.83,
+   "per_model": {
+    "claude-fable-5-1": {
+     "solver_usd": 4.582,
+     "grader_usd": 0.34,
+     "grader_model": "gpt-6-astra"
+    },
+    "gpt-6-astra": {
+     "solver_usd": 4.582,
+     "grader_usd": 0.068,
+     "grader_model": "gemini-4-argon"
+    },
+    "gemini-4-argon": {
+     "solver_usd": 0.916,
+     "grader_usd": 0.34,
+     "grader_model": "claude-fable-5-1"
+    }
+   },
+   "assumptions": {
+    "out": 2500,
+    "gout": 250,
+    "margin": 1.25
+   }
+  },
+  "worst": {
+   "total_usd": 16.72,
+   "per_model": {
+    "claude-fable-5-1": {
+     "solver_usd": 6.982,
+     "grader_usd": 0.62,
+     "grader_model": "gpt-6-astra"
+    },
+    "gpt-6-astra": {
+     "solver_usd": 6.982,
+     "grader_usd": 0.124,
+     "grader_model": "gemini-4-argon"
+    },
+    "gemini-4-argon": {
+     "solver_usd": 1.396,
+     "grader_usd": 0.62,
+     "grader_model": "claude-fable-5-1"
+    }
+   },
+   "assumptions": {
+    "out": 4000,
+    "gout": 600,
+    "margin": 1.25
+   }
+  }
+ },
+ "prices_usd_per_M": {
+  "claude-fable-5-1": [
+   10.0,
+   50.0
+  ],
+  "gpt-6-astra": [
+   10.0,
+   50.0
+  ],
+  "gemini-4-argon": [
+   2.0,
+   10.0
+  ]
+ },
+ "argon_price_valid_until": "2026-11-30"
+}
