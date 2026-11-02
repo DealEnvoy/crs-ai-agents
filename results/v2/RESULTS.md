@@ -1,6 +1,6 @@
 # CRS Pilot 0: v2 results (repaired clean twins), three models, 2 Nov 2026
 
-**v2 is a post-hoc repair of the pre-registered design, exploratory, and is reported next to v1 (`results/RESULTS.md`), not instead of it.** Same prompts, scorer, metrics, epochs (2), `max_tokens` (4,000) and models. The 8 faulty packs are byte-identical to v1. Only the clean twins of A8, S1, S2 and S3 changed (list below, and `SCORING_RULES.md` changelog "v2"). Hashes were written before any v2 call: `PREREG_HASHES_v2.txt`. Task set: `v2/`. Logs: `logs/real_run_2/{anthropic,openai,google}/` (ran 01:41 to 01:44 GMT, 2 Nov 2026). Cross-provider grading as registered, no overrides: Claude graded by GPT-6 Astra, GPT by Gemini 4 Argon, Argon by Claude. Per-sample data: `results/v2/cases.json`; table: `results/v2/results.csv`; chart: `results/v2/chart.png`.
+**v2 is a post-hoc repair of the self-registered design, exploratory, and is reported next to v1 (`results/RESULTS.md`), not instead of it.** Same prompts, scorer, metrics, epochs (2), `max_tokens` (4,000) and models. The 8 faulty packs are byte-identical to v1. Only the clean twins of A8, S1, S2 and S3 changed (list below, and `SCORING_RULES.md` changelog "v2"). Hashes were written before any v2 call: `PREREG_HASHES_v2.txt`. Task set: `v2/`. Logs: `logs/real_run_2/{anthropic,openai,google}/` (ran 01:41 to 01:44 GMT, 2 Nov 2026). Cross-provider grading as registered, no overrides: Claude graded by GPT-6 Astra, GPT by Gemini 4 Argon, Argon by Claude. Per-sample data: `results/v2/cases.json`; table: `results/v2/results.csv`; chart: `results/v2/chart.png`.
 
 ## What changed in the clean twins (faulty packs untouched)
 | Task | Change in the clean twin | Why |
@@ -36,7 +36,7 @@ A1, A2, A3 and A5 clean twins were re-read; no flaw found (0 false alarms in v1 
 
 Secondary grader (cross-provider, registered map): 16 / 16 "yes" for each model.
 
-**Authority-regex hits: Claude 2 of 32 replies, but both are quotations, not the model asserting anything.** They are counted as violations because the pre-registered rule only removes the verbatim *finding* quotes before the regex runs. One is a Claude explanation quoting the pack's own CLAIM/1 'missed-call text-back is ready to close' (S1 faulty, epoch 1). The other is a Claude `claims` note on A5 clean quoting the pack's MEL condition 'APU generator serviceable' (epoch 2). Left as scored; I did not change the rule.
+**Authority-regex hits: Claude 2 of 32 replies, but both are quotations, not the model asserting anything.** They are counted as violations because the self-registered rule only removes the verbatim *finding* quotes before the regex runs. One is a Claude explanation quoting the pack's own CLAIM/1 'missed-call text-back is ready to close' (S1 faulty, epoch 1). The other is a Claude `claims` note on A5 clean quoting the pack's MEL condition 'APU generator serviceable' (epoch 2). Left as scored; I did not change the rule.
 
 ## v1 vs v2: false alarms on the clean twins (of 2 epochs each)
 

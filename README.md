@@ -4,7 +4,7 @@ Repository `crs-ai-agents` (earlier working title: *Release Gate Pilot 0*).
 
 **CRS for AI agents, Pilot 0** applies the idea of a *Certificate of Release to Service* (CRS) to AI agents. In aircraft maintenance, a person signs to say finished work is fit to release, after checking that the work pack's own records support that statement. Pilot 0 asks a narrower question: can an AI model act as an **advisory reviewer** of a finished work pack (never the one who signs) and notice when the pack's own evidence does not support its "done" statements?
 
-This is a small, pre-registered pilot. It is not a product, a certification tool or a validated safety method.
+This is a small, **self-registered** pilot: the rules, packs and code were fixed in hash lists (`PREREG_HASHES*.txt`) written by the author before the runs. These lists carry no third-party timestamp, so they are a record of intent, not independent proof of timing; see "Registration and timeline" below. It is not a product, a certification tool or a validated safety method.
 
 ## What was tested
 
@@ -15,16 +15,16 @@ This is a small, pre-registered pilot. It is not a product, a certification tool
 - **Models under test.** `claude-fable-5-1`, `gpt-6-astra`, `gemini-4-argon`, each with provider-default sampling, `max_tokens` 4000 (including hidden reasoning), 2 epochs per pack. Built on [Inspect](https://inspect.aisi.org.uk/) (`crs_pilot.py`).
 - **Scoring is by code.** Detection, localisation (right location id), exact-quote evidence match, false alarms on clean twins, invented quotes (a finding whose quote is not a verbatim substring of the pack) and forbidden "released / safe to close" language are all computed by code. Counts are reported with **Wilson 95% intervals**; there are no significance tests and no ranking of models.
 - **Cross-provider grading.** A secondary metric ("do the findings identify the seeded problem?") is model-graded, and **no model grades its own provider**: Claude is graded by GPT, GPT by Gemini, Gemini by Claude. The harness asserts this in code. The grader never changes a primary metric.
-- **Pre-registered rules.** `SCORING_RULES.md` fixes the metrics, aggregation and threats to validity. File hashes are in `PREREG_HASHES*.txt`; `python3 verify_prereg.py` checks them (see "Pre-registration integrity" below).
-- **Hard cost cap.** `cost_guard.py` enforces a **$100 hard cap** across all runs. Each call reserves its worst-case cost first and is refused if spent plus reserved plus that call would pass the cap. The cap can be lowered by environment variable, never raised. Calls are logged to `ledger/calls.jsonl`.
+- **Self-registered rules.** `SCORING_RULES.md` fixes the metrics, aggregation and threats to validity. File hashes are in `PREREG_HASHES*.txt`; `python3 verify_prereg.py` checks them (see "Registration and timeline" below).
+- **Cost cap.** `cost_guard.py` enforces a **$100 cap** across all runs. Each call reserves its worst-case cost first and is refused if spent plus reserved plus that call would pass the cap. The cap can be lowered by environment variable, never raised. Calls are logged to `ledger/calls.jsonl`. The $100 cap is enforced by the pilot's own `cost_guard.py`, not by a provider-side limit; costs are computed from token counts and published prices. The guard checks a local ledger file (`ledger/spend.json`) before every call. Each call reserves its worst-case cost first and is refused if spent plus reserved plus that call would pass the cap. The cap can be lowered by environment variable, never raised. Calls are logged to `ledger/calls.jsonl`.
 
 ## Results
 
 All numbers below are from the files in this repo (`results/`, `results/v2/`, `ledger/`) and can be regenerated from the included Inspect logs with `analyse_results.py` and `spend_report.py`.
 
-Totals: **309 model calls (195 reviewer, 114 grader) plus 1 logged cost correction = 310 ledger rows; $11.79 total spend** (list-price estimate from reported token usage; an upper bound on invoices), against the $100 cap.
+Totals: **309 model calls (195 reviewer, 114 grader) plus 1 logged cost correction = 310 ledger rows; $11.79 total spend**, against the $100 cap. The 195 reviewer calls are the **192 scored reviewer samples** (3 models x 32 samples x 2 runs: 16 packs x 2 epochs) **plus 3 smoke-test calls**. The 114 grader calls are 112 on scored samples (including the 16 run 1 GPT findings that were graded twice, first by Claude because Gemini had not yet run (see Caveats), then by Gemini) plus 2 smoke-test grader calls. Smoke-test logs are not included. Spend figures are computed from token counts and the published prices in `cost_guard.py`; they are not reconciled with provider invoices.
 
-### Run 1 (pre-registered task set, "v1")
+### Run 1 (self-registered task set, "v1")
 
 | Measure, per model (16 faulty and 16 clean task-epochs) | claude-fable-5-1 | gpt-6-astra | gemini-4-argon |
 |---|---|---|---|
@@ -34,7 +34,7 @@ Totals: **309 model calls (195 reviewer, 114 grader) plus 1 logged cost correcti
 | Invented or non-exact quotes | 0 / 117 findings | 0 / 46 findings | 0 / 54 findings |
 | Forbidden-language hits (replies) | 0 / 32 | 0 / 32 | 0 / 32 |
 
-False alarms split by domain in run 1: aviation 2 / 10 for every model (all from the clean twin of A8), software 6 / 6, 4 / 6 and 6 / 6. Hand-reading showed design flaws in the clean twins of A8, S2 and S3 (and an ambiguity in S1). The pre-registered rule still counts them as false alarms, and they are reported that way.
+False alarms split by domain in run 1: aviation 2 / 10 for every model (all from the clean twin of A8), software 6 / 6, 4 / 6 and 6 / 6. Hand-reading showed design flaws in the clean twins of A8, S2 and S3 (and an ambiguity in S1). The registered rule still counts them as false alarms, and they are reported that way.
 
 ### Run 2 ("v2": repaired clean twins, exploratory)
 
@@ -57,7 +57,7 @@ After run 1, the clean twins of A8, S1, S2 and S3 were repaired (the 8 faulty pa
 - All three models caught every seeded fault, located it and quoted the evidence exactly. With 16 trials the Wilson lower bound for "always catches it" is 0.81, so this means "no misses seen", not "never misses".
 - The faulty packs put the contradicting line on the page. This is a reading-comprehension test, not a test of predicting a failure.
 - Detection of 100% alongside false alarms of 19% to 50% means these reviewers lean cautious. A reviewer that held every pack would score the same on detection, so the false-alarm column is the informative one. Most remaining false alarms are on software packs that lack test-to-claim mapping; they are better read as "asked for more evidence" than as hallucination. No quote was ever invented.
-- Gemini 4 Argon was run about 50 minutes after the other two models in run 1 (the first attempt failed with an HTTP 429 quota error, nothing billed, and it was repeated once billing was enabled). Until then GPT's findings were graded by Claude; they were then also graded by Gemini, the registered grader. Both gave 16 / 16 "yes". Details in `SCORING_RULES.md`.
+- Gemini 4 Argon was run about 30 minutes after the other two models in run 1 (Claude and GPT 01:05 to 01:08 GMT, Gemini 01:36 to 01:37 GMT on 2 Nov 2026, from the log timestamps) (the first attempt failed with an HTTP 429 quota error, nothing billed, and it was repeated once billing was enabled). Until then GPT's findings were graded by Claude; they were then also graded by Gemini, the registered grader. Both gave 16 / 16 "yes". Details in `SCORING_RULES.md`.
 
 ### Spend summary
 
@@ -115,17 +115,21 @@ CRS_REAL_RUN_APPROVED=YES .venv/bin/inspect eval crs_pilot.py \
 # v2 task set:  CRS_TASK_ROOT=v2 ... (same command)
 ```
 
+## Reading the logs
+
+The `.eval` files in `logs/` are Inspect logs (zstd-compressed zip archives, which a standard unzip tool may not open). View them with `inspect view --log-dir logs/real_run_1/anthropic` (after installing `requirements.lock.txt`), or read them in Python with `inspect_ai.log.read_eval_log(path)`. They hold the full model replies, including the providers' opaque reasoning blocks. Check each provider's terms if you reuse or republish them.
+
 ## Repository layout
 
 | Path | What it is |
 |---|---|
 | `crs_pilot.py` | Inspect task, prompts, scorer, grader map |
 | `cost_guard.py` | $100 hard cap, price table, per-call ledger |
-| `SCORING_RULES.md`, `PREREG_HASHES*.txt`, `verify_prereg.py` | Pre-registered rules, hashes, hash checker |
+| `SCORING_RULES.md`, `PREREG_HASHES*.txt`, `verify_prereg.py` | Self-registered rules, hashes, hash checker |
 | `WORDING_EDITS.md`, `wording_edits.json`, `verify_wording_edits.py` | Record and check of the one edit made to a hash-listed file after the runs |
 | `aviation_tasks/`, `software_tasks/` | Run 1 task packs, answer keys, builders, prompt templates; links to the AAIB reports and the short quotes relied on (full report texts are not included) |
 | `v2/` | Run 2 task set (repaired clean twins), built by `build_v2.py` |
-| `results/`, `results/v2/` | Per-sample data, tables, charts, written results for each run |
+| `results/`, `results/v2/` | Per-sample data, tables, charts, written results for each run. `results/RESULTS_first_pass_two_models.md` and `results/cases_v1_two_models.json` are transitional files from the first pass of run 1, before Gemini had run (two models only); the final run 1 files are `results/RESULTS.md` and `results/cases.json` |
 | `logs/real_run_1/`, `logs/real_run_2/` | Inspect logs of the real runs (reviewer and grader replies) |
 | `logs/mock_validation/summary.json` | Summary of the free scorer validation |
 | `ledger/calls.jsonl`, `ledger/spend.json` | Full per-call spend ledger and running total |
@@ -134,12 +138,19 @@ CRS_REAL_RUN_APPROVED=YES .venv/bin/inspect eval crs_pilot.py \
 
 The failed first Gemini attempt in run 1 (HTTP 429 quota error, nothing billed), the smoke-test logs and the mock-validation logs are not included. The source project for the software packs is not included; `software_tasks/build_software_packs.py` and `verify_provenance.py` need it (path in `TBC_REPO`), and the packs and provenance tables are included instead.
 
-## Pre-registration integrity
+## Registration and timeline
 
-`PREREG_HASHES.txt` was written before any real call; `PREREG_HASHES_v2.txt` before any v2 call. All 39 files in the v2 list match. Differences against the run 1 list are expected and recorded: `crs_pilot.py`, `cost_guard.py` and `SCORING_RULES.md` were edited after registration (changelog in `SCORING_RULES.md`: cost accounting fix, grader override hook, v2 task-root switch). `software_tasks/build_software_packs.py` was edited after the runs to move a local path and redaction terms out of the published script; it does not affect the hashed packs. The hash lists themselves are unchanged. `WORDING_EDITS.md` records that edit, and `verify_wording_edits.py` rebuilds the original by reversing it and compares it with the recorded digest (this needs a private file holding the removed text, which is not published). `python3 verify_prereg.py` lists every difference.
+All times are 2 Nov 2026, GMT.
+
+- **What "self-registered" means here.** The hash lists are plain text files written by the author. Nothing outside this repository (no registry, no third-party timestamp, no signed commit) proves when they were written. The times below come from file modification times on the working machine (not kept in this repository) and from the Inspect log and ledger timestamps in this repository.
+- **Order of events.** `PREREG_HASHES.txt` was written at about 00:42. The first real model call (a smoke test) was at 01:03 (`ledger/calls.jsonl`). Run 1 for Claude and GPT ran 01:05 to 01:08; `PREREG_HASHES_post_run.txt` was written at about 01:10. Gemini ran 01:36 to 01:37. `PREREG_HASHES_v2.txt` was written at 01:41:19, eight seconds before the v2 run started (01:41:27), and **after the run 1 results had been seen**. v2 is therefore a post-hoc repair of the clean twins, reported next to v1 and not as a confirmation. `PREREG_HASHES_v2_post_run.txt` was written at about 01:46.
+- **Git history.** The commits in this repository are dated 2 Nov 2026, after all runs. The history was reconstructed for publication, so commit dates say nothing about the order of the work.
+- **Three files cannot be reconstructed at their run 1 state.** `crs_pilot.py`, `cost_guard.py` and `SCORING_RULES.md` were edited after `PREREG_HASHES.txt` was written (cost accounting fix, grader override hook, v2 task-root switch, run records; see the changelog in `SCORING_RULES.md`). Their original versions are not in this repository, only their digests in `PREREG_HASHES.txt`. The files here are the later versions and match the v2 lists. `SCORING_RULES.md` still opens with the original registration text ("Registered ... before any real model call") and has run records appended further down. `aviation_tasks/prompt_template.md` has no digest in `PREREG_HASHES.txt` (the line is cut off in that list), so it was never registered.
+- **What the checker shows.** `python3 verify_prereg.py` lists every file whose hash differs from a list. The differences it expects are listed in the script and explained above: the three files just named (run 1 list), a few files changed after the post-run list was written, and `software_tasks/build_software_packs.py`. It exits with code 1 if any other difference or a missing file appears (and with `--strict` on any difference). The hash lists themselves are unchanged.
+- **The one edited registered file.** `software_tasks/build_software_packs.py` was edited after the runs to remove a company name and a local path (the redaction terms now come from an untracked local file); it does not affect the hashed packs. `WORDING_EDITS.md` records the edit. `verify_wording_edits.py` rebuilds the original by reversing the edit and compares it with the recorded digest, but it needs a private file holding the removed text, which is not published. Without that file it prints SKIPPED, so the public cannot verify this one edit.
 
 ## Sources and licence
 
 - Code: MIT, see `LICENSE` (copyright Isaac Adekunle). The `LICENSE` file also covers the other original material in this repository (synthetic task packs, answer keys, results); third-party material is excluded.
-- AAIB reports: the full report texts are **not** included. `aviation_tasks/aaib_sources.json` gives links to the official AAIB report pages and PDFs, plus the short quotes the task notes rely on (`python3 aviation_tasks/verify_sources.py --fetch` checks each quote against the official PDF). AAIB extracts and quotes remain under the publishers' terms (the reports are published under the UK Open Government Licence v3.0) and are not covered by the MIT licence.
-- `aviation_tasks/source_notes/regulation_excerpts.txt` holds short extracts of UK Regulation (EU) No 1321/2014 (CAA consolidation, CAA regulatory library). They are third-party material under the publisher's terms and are not covered by the MIT licence.
+- AAIB reports: the full report texts are **not** included. `aviation_tasks/aaib_sources.json` gives links to the official AAIB report pages and PDFs, plus the short quotes the task notes rely on (`python3 aviation_tasks/verify_sources.py --fetch` checks each quote against the official PDF). The quotes are from UK Air Accidents Investigation Branch (AAIB) reports. Contains public sector information licensed under the Open Government Licence v3.0. The quotes remain under the publishers' terms and are not covered by the MIT licence.
+- `aviation_tasks/source_notes/regulation_excerpts.txt` holds verbatim extracts (about 1,800 words) of UK Regulation (EU) No 1321/2014 (Continuing Airworthiness), from the UK Civil Aviation Authority (CAA) consolidation "Fifth edition, amendment 2, September 2026" (CAA regulatory library, downloaded 1 Nov 2026). Credit: UK Civil Aviation Authority. The CAA's licence note allows copying on the conditions that the latest version is used, in context, with credit to the CAA; these extracts are a snapshot, so check the CAA regulatory library for the current text. They are third-party material and are not covered by the MIT licence.

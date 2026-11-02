@@ -4,7 +4,7 @@ Scored per `SCORING_RULES.md` (v1). Descriptive counts with Wilson 95% intervals
 
 **Read this first.**
 1. **Gemini 4 Argon was not run.** The Google API key has no usable quota for it (HTTP 429, free-tier limit 0). Two models only.
-2. **The false-alarm counts are contested.** In three clean twins (A8, S2, S3) both models raised findings that read as defensible from the pack text (details below). The pre-registered rule still counts them as false alarms, and they are reported that way, but they are probably a pack-design problem, not model noise.
+2. **The false-alarm counts are contested.** In three clean twins (A8, S2, S3) both models raised findings that read as defensible from the pack text (details below). The self-registered rule still counts them as false alarms, and they are reported that way, but they are probably a pack-design problem, not model noise.
 3. n is tiny: 16 faulty and 16 clean task-epochs per model (8 tasks x 2 epochs). Epochs are repeats of the same pack, not independent samples.
 
 ## Headline (per model, all 8 tasks, 2 epochs; counts and Wilson 95% CI)
@@ -40,7 +40,7 @@ False alarms on the clean twin by task (of 2 epochs each; the other tasks A1, A2
 | S3 (checkout redirect) | 2 | 2 |
 
 ## Why the false alarms need a careful reading
-Every flagged clean twin was read by hand. The pre-registered scoring still counts all of them as false alarms.
+Every flagged clean twin was read by hand. The self-registered scoring still counts all of them as false alarms.
 - **A8 clean (4 of 4 replies flagged).** Both twins say "complied with; no further action" for an AD that the pack's own status list shows as repeating every 600 FH. The only seeded difference is the airframe hours. Both models noted the clean case is not overdue (GPT says so in its explanation) but objected to "no further action" on a repetitive AD. Reasonable objection.
 - **S2 clean (4 of 4 flagged).** The clean twin still contains [DEPLOY/4] "the check **fails open**" next to a gate line that says "No safeguard bypassed or failing open: YES". Both models flagged that contradiction (SW2). That contradiction is in the pack, so this is a twin-design flaw, not a hallucination.
 - **S3 clean (4 of 4 flagged).** The pack says Stripe is off at this deploy and "No calls, texts, emails or test signups were made", while the ticket and gate talk about the Stripe-on hand-off and real-use evidence. Both models objected to exactly that (SW4 / SW8). Defensible.

@@ -1,9 +1,9 @@
 # CRS Pilot 0: v1 results, all three models (2 Nov 2026)
 
-Scored per `SCORING_RULES.md` (v1). Descriptive counts with Wilson 95% intervals; no significance tests, no model ranking. Original twins, as pre-registered. Inspect logs: `logs/real_run_1/{anthropic,openai,google_argon}/` (Claude and GPT ran 01:05 to 01:10 GMT; Argon ran 01:35 to 01:37 GMT after Google billing was enabled; `logs/real_run_1/google` is the earlier failed 429 attempt). Per-sample data: `results/cases.json`. Table: `results/results.csv`. Chart: `results/chart.png`. Spend: `results/spend.json`. The first two-model write-up is kept as `results/RESULTS_first_pass_two_models.md`.
+Scored per `SCORING_RULES.md` (v1). Descriptive counts with Wilson 95% intervals; no significance tests, no model ranking. Original twins, as self-registered. Inspect logs: `logs/real_run_1/{anthropic,openai,google_argon}/` (Claude and GPT ran 01:05 to 01:10 GMT; Argon ran 01:35 to 01:37 GMT after Google billing was enabled; `logs/real_run_1/google` is the earlier failed 429 attempt). Per-sample data: `results/cases.json`. Table: `results/results.csv`. Chart: `results/chart.png`. Spend: `results/spend.json`. The first two-model write-up is kept as `results/RESULTS_first_pass_two_models.md`.
 
 **Read this first.**
-1. **The false-alarm counts are contested.** Four clean twins (A8, S1, S2, S3) were flagged by at least two models, and hand-reading showed twin-design flaws in A8, S2 and S3 (and an ambiguity in S1). The pre-registered rule counts them as false alarms and they are reported that way. The repaired twins are tested in **v2** (`results/v2/RESULTS.md`).
+1. **The false-alarm counts are contested.** Four clean twins (A8, S1, S2, S3) were flagged by at least two models, and hand-reading showed twin-design flaws in A8, S2 and S3 (and an ambiguity in S1). The self-registered rule counts them as false alarms and they are reported that way. The repaired twins are tested in **v2** (`results/v2/RESULTS.md`).
 2. n is tiny: 16 faulty and 16 clean task-epochs per model (8 tasks x 2 epochs). Epochs are repeats of the same pack, not independent samples.
 3. The Argon grader deviation was fixed: GPT's findings were first graded by Claude (Argon unavailable), then re-graded by Argon, the registered grader. Both gave 16/16 "yes".
 
@@ -50,7 +50,7 @@ False alarms on the clean twin by task (of 2 epochs each; A1, A2, A3 and A5 had 
 | S3 (checkout redirect) | 2 | 2 | 2 |
 
 ## Why the false alarms need a careful reading
-Every flagged clean twin was read by hand. The pre-registered scoring still counts all of them as false alarms.
+Every flagged clean twin was read by hand. The self-registered scoring still counts all of them as false alarms.
 - **A8 clean (6 of 6 replies flagged).** Both twins say "complied with; no further action" for an AD that the pack's own status list shows as repeating every 600 FH. The only seeded difference is the airframe hours. The models noted the clean case is not overdue but objected to "no further action" on a repetitive AD. Reasonable objection.
 - **S2 clean (6 of 6 flagged).** The clean twin still contains [DEPLOY/4] "the check **fails open**" next to a gate line that says "No safeguard bypassed or failing open: YES". That contradiction is in the pack, so this is a twin-design flaw, not a hallucination.
 - **S3 clean (6 of 6 flagged).** The pack says Stripe is off at this deploy and "No calls, texts, emails or test signups were made", while the ticket and gate talk about the Stripe-on hand-off and real-use evidence. Defensible.
@@ -81,4 +81,4 @@ See the v1 run record and its addendum in `SCORING_RULES.md`: (1) cost accountin
 ## Caveats
 - Aviation packs are invented; software packs are real-derived from one project, with harness-written closure requests and gates.
 - One prompt per domain, provider-default sampling, 4,000-token output cap including hidden reasoning (no truncation or parse failures happened).
-- Argon ran about 50 minutes after the other two, on the same code and packs; nothing else differed.
+- Argon ran about 30 minutes after the other two (Claude and GPT 01:05 to 01:08 GMT, Argon 01:36 to 01:37 GMT), on the same code and packs; nothing else differed.

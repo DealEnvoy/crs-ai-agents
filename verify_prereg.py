@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Check the files in this repo against the sha256 lists recorded in PREREG_HASHES*.txt.
 
-Usage: python3 verify_prereg.py [PREREG_HASHES_v2.txt ...]    (default: all four lists)
+Usage: python3 verify_prereg.py [--strict] [--private PATH] [PREREG_HASHES_v2.txt ...]    (default: all four lists)
+
+Exit code: 0 if every difference is one of the expected, documented ones listed in EXPECTED below;
+1 if any other file differs or is missing (or, with --strict, if any file differs at all, expected or not).
+A clean run therefore prints "EXPECTED" lines for the known differences and ends with "RESULT: OK".
 
 Notes on what a mismatch means (see SCORING_RULES.md, changelog):
   * PREREG_HASHES.txt is the registration before any real call. crs_pilot.py, cost_guard.py and SCORING_RULES.md
@@ -19,7 +23,29 @@ import hashlib, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import verify_wording_edits as VW
+# Known, documented differences (list file -> files that are expected to differ and why).
+EXPECTED = {
+    "PREREG_HASHES.txt": {
+        "crs_pilot.py": "edited after this list was written (grader override hook, v2 task-root switch); see SCORING_RULES.md changelog; original not in this repo",
+        "cost_guard.py": "edited after this list was written (cost accounting fix); see SCORING_RULES.md changelog; original not in this repo",
+        "SCORING_RULES.md": "edited after this list was written (changelog and run records); original not in this repo",
+        "software_tasks/build_software_packs.py": "company name and local path removed after the runs; see WORDING_EDITS.md",
+    },
+    "PREREG_HASHES_post_run.txt": {
+        "crs_pilot.py": "changed after this list was written (later versions match the v2 lists)",
+        "SCORING_RULES.md": "changed after this list was written (later run records)",
+        "analyse_results.py": "changed after this list was written",
+        "make_report.py": "changed after this list was written",
+        "results/cases.json": "regenerated after this list was written (now includes Gemini; see results/cases_v1_two_models.json for the earlier two-model file)",
+        "results/results.csv": "regenerated after this list was written (now includes Gemini)",
+    },
+}
 _args = sys.argv[1:]
+STRICT = "--strict" in _args
+if STRICT:
+    _args.remove("--strict")
+unexpected = 0
+expected_n = 0
 if "--private" in _args:
     i = _args.index("--private"); del _args[i:i + 2]
 PRIV = VW.load_private()
@@ -45,11 +71,19 @@ for lst in lists:
             ok += 1
         elif path in EDITED:
             if _REV is None:
-                print("  EDITED  ", path, "(documented; pass --private to prove it)"); bad += 1
+                print("  EDITED  ", path, "(documented; pass --private to prove it)"); bad += 1; expected_n += 1
             elif _REV[path].get(lst):
                 print("  EDITED  ", path, "(rebuilt original matches this digest)"); ok += 1
             else:
-                print("  DIFFERS ", path, "(rebuilt original does NOT match)"); bad += 1
+                print("  DIFFERS ", path, "(rebuilt original does NOT match)"); bad += 1; unexpected += 1
+        elif path in EXPECTED.get(lst, {}):
+            print("  EXPECTED", path, "-", EXPECTED[lst][path]); bad += 1; expected_n += 1
         else:
-            print("  DIFFERS ", path); bad += 1
+            print("  DIFFERS ", path, "(unexpected)"); bad += 1; unexpected += 1
+    unexpected += missing
     print(f"  {ok} match, {bad} differ, {missing} missing")
+print()
+print(f"{expected_n} expected, documented difference(s); {unexpected} unexpected difference(s) or missing file(s).")
+if unexpected or (STRICT and expected_n):
+    print("RESULT: DIFFERENCES FOUND"); sys.exit(1)
+print("RESULT: OK (only the expected, documented differences)")

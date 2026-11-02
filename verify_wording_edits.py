@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Proves that the files listed in wording_edits.json differ from the pre-registered versions only by the documented edits.
+"""Proves that the files listed in wording_edits.json differ from the self-registered versions only by the documented edits.
 
 For each file, the edits are reversed using a private mapping (the removed original text, not published) and the sha256 of the
 rebuilt original is compared with the digest in every PREREG_HASHES*.txt list that names the file.

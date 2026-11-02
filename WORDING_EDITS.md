@@ -16,6 +16,6 @@ The removed text is not shown here on purpose. It is held in a private mapping f
 
 ## Other files
 
-All other hash-listed files are byte-identical to the versions used in the runs, including `crs_pilot.py`, `cost_guard.py`, `validate_mock.py`, `SCORING_RULES.md`, `aviation_tasks/prompt_template.md` and the answer keys and provenance files. Their hashes agree with the lists as described in the README ("Pre-registration integrity"); `aviation_tasks/prompt_template.md` has no digest in `PREREG_HASHES.txt` (the line is cut off in the original list).
+All other hash-listed files are byte-identical to the versions used in the runs, including `crs_pilot.py`, `cost_guard.py`, `validate_mock.py`, `SCORING_RULES.md`, `aviation_tasks/prompt_template.md` and the answer keys and provenance files. Their hashes agree with the lists as described in the README ("Registration and timeline"); `aviation_tasks/prompt_template.md` has no digest in `PREREG_HASHES.txt` (the line is cut off in the original list).
 
 The raw Inspect logs in `logs/` are unmodified.
