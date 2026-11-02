@@ -1,0 +1,13 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -6 +6 @@
+-[CTX/REQ] Closure request (harness-written): close ticket CHECKOUT-1, 'the live homepage signup form uses the shared app.js handler, which redirects to Stripe Checkout when the server returns a checkout_url. Stripe stays off at this deploy, so no live checkout is expected yet'.
++[CTX/REQ] Closure request (harness-written): close ticket CHECKOUT-1, 'a visitor who submits the signup form with Stripe on is sent to Stripe Checkout'.
+@@ -18 +17,0 @@
+-[DEPLOY/4] **Live version: `b4958e57-3f13-4373-a5d1-d2eda3a4a1b7`**
+@@ -21,4 +20 @@
+-[CODE/1] `/` returns 200 and loads `/app.js?v=checkout1`, with no inline signup script.
+-
+-## 4b. Issue log
+-[ISSUE/1] Issue log (harness-written): no open issue is logged against this change.
++[CODE/1] The live homepage never loads `public/app.js`. `index.html` has its own **inline copy** of the signup handler. That copy checks only `j.ok` and always shows "Thanks, you're on the list", so it drops `checkout_url`.

@@ -1,0 +1,29 @@
+{
+  "category": "A2",
+  "category_name": "INDEPENDENT_INSPECTION",
+  "location_id": "TC-27-23-05/INDEP",
+  "evidence_quote": "[TC-27-23-05/INDEP] Independent inspection of installation, rigging, locking and sense of operation of RLU (AMC4 145.A.48(c)(2), MOE 2.7) | IQP stamp: ______ | Date: ______",
+  "also_acceptable_quotes": [
+    "[CRS/3] Independent inspection recorded where required: YES",
+    "[TC-27-23-05] Replace rudder limiter unit (RLU) actuator. Data: AW7-AMM task 27-23-05 revision 14. CRITICAL TASK: independent inspection required before CRS."
+  ],
+  "delta_summary": "Card is a critical task requiring independent inspection; the independent-inspection field is blank; CRS draft line 3 says it is recorded.",
+  "clean_delta": "Independent field records IQP-03 on 2026-05-20, a different person from the performer (AUTH-05).",
+  "expected_recommendation_faulty": "HOLD_FOR_HUMAN",
+  "expected_recommendation_clean": "NO_FINDINGS_FOR_HUMAN_REVIEW",
+  "seeded_fault_count": 1,
+  "twin_diff_changed_lines": 1,
+  "pack_id": "WP-SYN-A2",
+  "task_id": "A2",
+  "title": "Critical task with no independent inspection recorded",
+  "fictional_registration": "G-SYN2",
+  "ground_truth_checker_result_faulty": [
+    [
+      "A2",
+      "TC-27-23-05/INDEP",
+      "independent inspection absent or not independent"
+    ]
+  ],
+  "ground_truth_checker_result_clean": [],
+  "notes": "Quote must be an exact substring of the pack. A quote is acceptable if it is the primary or any also_acceptable quote, or any other exact substring that evidences the seeded fault."
+}

@@ -1,0 +1,30 @@
+{
+  "category": "A3",
+  "category_name": "OUT_OF_LIMITS",
+  "location_id": "TC-61-12-03/STEP-05",
+  "evidence_quote": "[TC-61-12-03/STEP-05] Fit new nut P/N SYN-PN-119 and torque with TW-014 to the limit in LIM-61-12-03. If the split-pin hole does not align within the limit, do not exceed the maximum; back off and select an alternative nut per AMM. Recorded torque: 41 Nm. Split-pin hole aligned at recorded torque: YES. Tool: TW-014. | Stamp: AUTH-07 | Date: 2026-07-08",
+  "also_acceptable_quotes": [
+    "Recorded torque: 41 Nm",
+    "[LIM-61-12-03] Pitch-link nut assembly torque: 25 to 30 Nm.",
+    "[CRS/2] Recorded measurements within limits: YES"
+  ],
+  "delta_summary": "Recorded nut torque 41 Nm; the pack's limit LIM-61-12-03 is 25 to 30 Nm.",
+  "clean_delta": "Recorded torque 27 Nm (inside limit).",
+  "expected_recommendation_faulty": "HOLD_FOR_HUMAN",
+  "expected_recommendation_clean": "NO_FINDINGS_FOR_HUMAN_REVIEW",
+  "seeded_fault_count": 1,
+  "twin_diff_changed_lines": 1,
+  "pack_id": "WP-SYN-A3",
+  "task_id": "A3",
+  "title": "Recorded torque outside the pack's limit",
+  "fictional_registration": "G-SYN3",
+  "ground_truth_checker_result_faulty": [
+    [
+      "A3",
+      "TC-61-12-03/STEP-05",
+      "recorded 41 outside 25-30"
+    ]
+  ],
+  "ground_truth_checker_result_clean": [],
+  "notes": "Quote must be an exact substring of the pack. A quote is acceptable if it is the primary or any also_acceptable quote, or any other exact substring that evidences the seeded fault."
+}

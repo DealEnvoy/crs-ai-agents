@@ -1,0 +1,8 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -21,4 +21 @@
+-[FIELD/1] **Forwarding test:** after this release, [OWNER]'s real test call produced a text (with the WhatsApp link) and a `customer_calls` log entry.
+-
+-## 4b. Issue log
+-[ISSUE/1] Issue log (harness-written): no open issue is logged against this change.
++[FIELD/1] **Silent forwarding failure:** the test call produced no text and no log entry.

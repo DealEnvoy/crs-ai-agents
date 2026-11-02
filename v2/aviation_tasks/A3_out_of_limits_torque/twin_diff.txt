@@ -1,0 +1,5 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -29 +29 @@
+-[TC-61-12-03/STEP-05] Fit new nut P/N SYN-PN-119 and torque with TW-014 to the limit in LIM-61-12-03. If the split-pin hole does not align within the limit, do not exceed the maximum; back off and select an alternative nut per AMM. Recorded torque: 27 Nm. Split-pin hole aligned at recorded torque: YES. Tool: TW-014. | Stamp: AUTH-07 | Date: 2026-07-08
++[TC-61-12-03/STEP-05] Fit new nut P/N SYN-PN-119 and torque with TW-014 to the limit in LIM-61-12-03. If the split-pin hole does not align within the limit, do not exceed the maximum; back off and select an alternative nut per AMM. Recorded torque: 41 Nm. Split-pin hole aligned at recorded torque: YES. Tool: TW-014. | Stamp: AUTH-07 | Date: 2026-07-08

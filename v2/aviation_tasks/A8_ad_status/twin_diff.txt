@@ -1,0 +1,8 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -5 +5 @@
+-[CTX/AIRCRAFT] Type: Aerowing AW-7 (fictional twin-turboprop). Registration: G-SYN8 (fictional). Airframe hours at pack review: 11,805 FH.
++[CTX/AIRCRAFT] Type: Aerowing AW-7 (fictional twin-turboprop). Registration: G-SYN8 (fictional). Airframe hours at pack review: 11,905 FH.
+@@ -27 +27 @@
+-[TC-05-50-02/STEP-04] AD SYN-2026-03: repeat 600 FH; result: complied, not yet due. | Stamp: AUTH-09 | Date: 2026-11-03
++[TC-05-50-02/STEP-04] AD SYN-2026-03: result: complied with; no further action. | Stamp: AUTH-09 | Date: 2026-11-03

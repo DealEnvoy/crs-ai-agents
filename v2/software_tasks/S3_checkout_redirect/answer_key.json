@@ -1,0 +1,36 @@
+{
+  "task_id": "S3",
+  "pack_id": "CP-REAL-S3",
+  "domain": "software",
+  "title": "Redirect-to-checkout claimed and 54 tests pass, but the live homepage never loads the file that redirects",
+  "category": "SW3",
+  "category_name": "CLAIMED_PATH_UNREACHABLE",
+  "location_id": "CODE/1",
+  "evidence_quote": "[CODE/1] The live homepage never loads `public/app.js`. `index.html` has its own **inline copy** of the signup handler. That copy checks only `j.ok` and always shows \"Thanks, you're on the list\", so it drops `checkout_url`.",
+  "also_acceptable_quotes": [
+    "[GATE/6] Claimed code path reachable from the live entry point: YES",
+    "[CLAIM/1] `app.js` redirects to `checkout_url` only if one is returned, which never happens while Stripe is off."
+  ],
+  "delta_summary": "The code line says the live homepage never loads public/app.js and its inline handler drops checkout_url, so the redirect the claim relies on is unreachable, yet 54 tests pass and gate line 6 says the path is reachable.",
+  "clean_delta": "Page line says the homepage loads /app.js?v=checkout1 with no inline signup script (the real post-fix state, from a later deploy entry). v2 clean twin changes: CTX/REQ narrowed to what is evidenced (page wiring; Stripe stays off) in the clean twin only (v1 asked about Stripe-on while Stripe was off); added DEPLOY/4 real live-version line (verbatim); added [ISSUE/1] issue-log section. The faulty pack is byte-identical to v1.",
+  "expected_recommendation_faulty": "HOLD_FOR_HUMAN",
+  "expected_recommendation_clean": "NO_FINDINGS_FOR_HUMAN_REVIEW",
+  "seeded_fault_count": 1,
+  "twin_diff_changed_lines": 2,
+  "ground_truth_checker_result_faulty": [
+    [
+      "SW3",
+      "CODE/1",
+      "redirect claimed in app.js, but the homepage never loads app.js; gate says path reachable"
+    ]
+  ],
+  "ground_truth_checker_result_clean": [],
+  "clean_decisive_line_kind": "verbatim",
+  "provenance_note": "Real log: DEPLOY-LOG 17 Oct 13:56 deploy (claim, 54 tests); the fix entry 14:58 ('This was the root cause: the inline copy ignored checkout_url'); staged-checkout README 'Root cause'. The faulty decisive line is real but was written after the claim (it is the later diagnosis). The clean decisive line is the real post-fix verification line (DEPLOY-LOG L155).",
+  "notes": "Quote must be an exact substring of the pack. A finding is evidenced if its quote contains the primary quote, or any also_acceptable quote, or is any other exact substring of the pack that evidences the seeded fault. For [CLAIM/1] and similar short ids in also_acceptable, the finding's location_id equal to that id also counts.",
+  "v2_clean_changes": [
+    "CTX/REQ narrowed to what is evidenced (page wiring; Stripe stays off) in the clean twin only (v1 asked about Stripe-on while Stripe was off)",
+    "added DEPLOY/4 real live-version line (verbatim)",
+    "added [ISSUE/1] issue-log section"
+  ]
+}

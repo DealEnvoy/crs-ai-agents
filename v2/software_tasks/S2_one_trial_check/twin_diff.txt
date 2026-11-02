@@ -1,0 +1,12 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -19,2 +19 @@
+-[DEPLOY/4] Abandoned checkouts don't count. If the Stripe lookup fails, the check **fails closed** (the customer is not provisioned) and the alert says the card check was unavailable.
+-[DEPLOY/5] **Live version: `ad20ff2c-caca-49df-b729-29cc62043d97`** (version 31).
++[DEPLOY/4] Abandoned checkouts don't count. If the Stripe lookup fails, the check **fails open** (the customer is provisioned) and the alert says the card check was unavailable.
+@@ -23,4 +22 @@
+-[FIELD/1] **One-trial check** (live signup <customer-id> logged `ok: mobile, email and card fingerprint checked, no earlier match`)
+-
+-## 4b. Issue log
+-[ISSUE/1] Issue log (harness-written): no open issue is logged against this change.
++[FIELD/1] **One-trial check fingerprint fix** ([OWNER]'s live signup <customer-id> logged `unavailable: no card fingerprint`)

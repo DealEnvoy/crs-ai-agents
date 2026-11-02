@@ -1,0 +1,5 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -34 +34 @@
+-[TC-27-23-05/INDEP] Independent inspection of installation, rigging, locking and sense of operation of RLU (AMC4 145.A.48(c)(2), MOE 2.7) | IQP stamp: IQP-03 | Date: 2026-05-20
++[TC-27-23-05/INDEP] Independent inspection of installation, rigging, locking and sense of operation of RLU (AMC4 145.A.48(c)(2), MOE 2.7) | IQP stamp: ______ | Date: ______

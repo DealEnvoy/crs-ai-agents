@@ -1,0 +1,33 @@
+{
+  "category": "A8",
+  "category_name": "AD_STATUS",
+  "location_id": "AD/SYN-2026-03",
+  "evidence_quote": "[AD/SYN-2026-03] Nose gear main fitting bore ultrasonic inspection. Repeat every 600 FH. Last done 11,240 FH (REC-SYN-0771). Next due at 11,840 FH.",
+  "also_acceptable_quotes": [
+    "[TC-05-50-02/STEP-04] AD SYN-2026-03: result: complied with; no further action. | Stamp: AUTH-09 | Date: 2026-11-03",
+    "[CTX/AIRCRAFT] Type: Aerowing AW-7 (fictional twin-turboprop). Registration: G-SYN8 (fictional). Airframe hours at pack review: 11,905 FH.",
+    "[CRS/8] Applicable ADs complied with: YES"
+  ],
+  "delta_summary": "Card step 04 says SYN-2026-03 'complied with; no further action', but the AD list shows next due at 11,840 FH and the airframe is at 11,905 FH (65 FH overdue).",
+  "clean_delta": "Airframe at 11,805 FH, so the repeat inspection is not yet due (35 FH remaining). v2: step 04 in the clean twin now reads 'repeat 600 FH; result: complied, not yet due.' (v1 said 'complied with; no further action', which models objected to for a repeating AD). The faulty pack is unchanged from v1.",
+  "expected_recommendation_faulty": "HOLD_FOR_HUMAN",
+  "expected_recommendation_clean": "NO_FINDINGS_FOR_HUMAN_REVIEW",
+  "seeded_fault_count": 1,
+  "twin_diff_changed_lines": 2,
+  "pack_id": "WP-SYN-A8",
+  "task_id": "A8",
+  "title": "AD marked complied but repeat inspection overdue",
+  "fictional_registration": "G-SYN8",
+  "ground_truth_checker_result_faulty": [
+    [
+      "A8",
+      "AD/SYN-2026-03",
+      "overdue: 11905 FH > next due 11840"
+    ]
+  ],
+  "ground_truth_checker_result_clean": [],
+  "notes": "Quote must be an exact substring of the pack. A quote is acceptable if it is the primary or any also_acceptable quote, or any other exact substring that evidences the seeded fault.",
+  "v2_clean_changes": [
+    "TC-05-50-02/STEP-04 wording (clean twin only)"
+  ]
+}

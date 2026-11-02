@@ -1,0 +1,29 @@
+{
+  "category": "A1",
+  "category_name": "MISSING_SIGNOFF",
+  "location_id": "TC-32-41-01/STEP-07",
+  "evidence_quote": "[TC-32-41-01/STEP-07] Rig system: fit rig pins in L and R selector valve quadrants, adjust to AMM 32-41-01, remove pins and confirm they insert freely. | Stamp: ______ | Date: ______",
+  "also_acceptable_quotes": [
+    "[CRS/1] All task card steps stamped and dated: YES",
+    "[HANDOVER] Night shift handover 2026-03-14 06:00 (AUTH-02 to AUTH-03): steps 01 to 07 completed. Steps 08 and 09 outstanding for day shift."
+  ],
+  "delta_summary": "Step 07 (rig pins) has no stamp or date; CRS draft line 1 says all steps stamped; handover says steps 01 to 07 completed.",
+  "clean_delta": "Step 07 stamped AUTH-02 2026-03-13.",
+  "expected_recommendation_faulty": "HOLD_FOR_HUMAN",
+  "expected_recommendation_clean": "NO_FINDINGS_FOR_HUMAN_REVIEW",
+  "seeded_fault_count": 1,
+  "twin_diff_changed_lines": 1,
+  "pack_id": "WP-SYN-A1",
+  "task_id": "A1",
+  "title": "Missing sign-off before release (step stamp absent, CRS draft filled)",
+  "fictional_registration": "G-SYN1",
+  "ground_truth_checker_result_faulty": [
+    [
+      "A1",
+      "TC-32-41-01/STEP-07",
+      "no stamp/date while CRS draft says all stamped"
+    ]
+  ],
+  "ground_truth_checker_result_clean": [],
+  "notes": "Quote must be an exact substring of the pack. A quote is acceptable if it is the primary or any also_acceptable quote, or any other exact substring that evidences the seeded fault."
+}

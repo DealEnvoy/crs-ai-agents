@@ -1,0 +1,30 @@
+{
+  "category": "A5",
+  "category_name": "DEFERRED_DEFECT_OVERDUE",
+  "location_id": "ADD-SYN-0412",
+  "evidence_quote": "[ADD-SYN-0412] Engine generator 1 inoperative (tripping TRU 1) | MEL-SYN 24-1b | Deferred: 2026-10-03 | Status: OPEN | RIE on file: none",
+  "also_acceptable_quotes": [
+    "[MEL-SYN 24-1b] Engine generator 1 inoperative. Category C. 10 consecutive calendar days. Day of discovery not counted; limit expires 2359 UTC on day 10. Conditions: APU generator serviceable.",
+    "[TECHLOG/SYN-0461] 2026-10-16: Pre-flight: ADD-SYN-0412 and ADD-SYN-0398 still open. Awaiting CRS for daily check.",
+    "[CRS/7] No open deferred defect beyond its limit: YES"
+  ],
+  "delta_summary": "Category C item, 10 calendar days, day of discovery not counted. Deferred 2026-10-03 so the limit expired 2359 UTC on 2026-10-13; still OPEN on the pack review date 2026-10-16 with no RIE on file.",
+  "clean_delta": "Deferred 2026-10-08, so 2026-10-16 is day 8 (inside the limit).",
+  "expected_recommendation_faulty": "HOLD_FOR_HUMAN",
+  "expected_recommendation_clean": "NO_FINDINGS_FOR_HUMAN_REVIEW",
+  "seeded_fault_count": 1,
+  "twin_diff_changed_lines": 1,
+  "pack_id": "WP-SYN-A5",
+  "task_id": "A5",
+  "title": "Deferred defect open past its MEL limit",
+  "fictional_registration": "G-SYN5",
+  "ground_truth_checker_result_faulty": [
+    [
+      "A5",
+      "ADD-SYN-0412",
+      "open past limit; expiry 2026-10-13"
+    ]
+  ],
+  "ground_truth_checker_result_clean": [],
+  "notes": "Quote must be an exact substring of the pack. A quote is acceptable if it is the primary or any also_acceptable quote, or any other exact substring that evidences the seeded fault."
+}
