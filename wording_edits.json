@@ -1,0 +1,9 @@
+{
+  "_note": "Hash-listed file edited after the runs. The edit is listed in WORDING_EDITS.md. The text that was removed is kept in a private file (not published); verify_wording_edits.py uses it, if supplied, to rebuild the original and compare its sha256 with the recorded digest.",
+  "files": [
+    {
+      "file": "software_tasks/build_software_packs.py",
+      "method": "hunks"
+    }
+  ]
+}
