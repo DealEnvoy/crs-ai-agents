@@ -1,0 +1,5 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -33 +33 @@
+-[ADD-SYN-0412] Engine generator 1 inoperative (tripping TRU 1) | MEL-SYN 24-1b | Deferred: 2026-10-08 | Status: OPEN | RIE on file: none
++[ADD-SYN-0412] Engine generator 1 inoperative (tripping TRU 1) | MEL-SYN 24-1b | Deferred: 2026-10-03 | Status: OPEN | RIE on file: none

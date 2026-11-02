@@ -1,0 +1,2 @@
+-[FIELD/1] **One-trial check fingerprint fix** ([OWNER]'s live signup <customer-id> logged `unavailable: no card fingerprint`)
++[FIELD/1] **One-trial check** (live signup <customer-id> logged `ok: card fingerprint checked, no earlier match`)

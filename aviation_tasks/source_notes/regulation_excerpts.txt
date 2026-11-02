@@ -1,0 +1,260 @@
+REGULATION EXCERPTS (verbatim extracts from pdftotext of the UK CAA consolidation, downloaded 1 Nov 2026)
+Source: UK Regulation (EU) No. 1321/2014 (Continuing Airworthiness), CAA 'Fifth edition, amendment 2, September 2026'; page footer 'October 2026'.
+URL: https://regulatorylibrary.caa.co.uk/1321-2014-PDF/PDF.pdf
+Printed page numbers: 145.A.45(e) p478; 145.A.48 p487; AMC2 p488; AMC3/AMC4 pp489-491; 145.A.50 p492; 145.A.55 p504; M.A.303 p79; M.A.403 p111.
+Crown/CAA text; CAA licence note on p.2 of the PDF: you can copy and use this text but use the latest version, in context, and credit the CAA.
+
+=== 145.A.48 / AMC2 / AMC3 / AMC4 145.A.48(c)(2) ===
+       145.A.48 Performance of maintenance
+                                                                                       SI 2023 No. 588
+
+               (a) The organisation may only carry out maintenance on an aircraft or component
+                   for which it is approved when all the necessary facilities, equipment, tooling,
+                   material, maintenance data and personnel are available.
+               (b) The organisation must be responsible for the maintenance that is performed
+                   within the scope of its approval.
+               (c) The organisation must ensure that:
+                   (1) after the completion of the maintenance, a general verification is carried
+                       out to ensure that the aircraft or component is clear of all tools, equipment
+                       and any extraneous parts or material, and that all access panels that were
+                       removed have been refitted;
+                   (2) an error capturing method is implemented after the performance of any
+                       critical maintenance task;
+                   (3) the risk of errors during maintenance and the risk of errors being repeated
+                       in identical maintenance tasks are minimised;
+                   (4) damage is assessed, and modifications and repairs are carried out using
+                       the data specified in point M.A.304 of Annex I (Part-M) or point ML.A.304
+                       of Annex Vb (Part-ML), as applicable;
+                   (5) the assessment of aircraft defects is carried out in accordance with point
+                       M.A.403(b) of Annex I (Part-M) or point ML.A.403(b) of Annex Vb
+                       (Part-ML), as applicable.
+
+
+       AMC2 145.A.48(c)(2) Performance of maintenance
+                                                                                  CAA ORS9 Decision No. 38
+
+       CRITICAL MAINTENANCE TASKS
+               (a) The procedure should ensure that the following maintenance tasks are
+                   reviewed to assess their impact on flight safety:
+                   (1) tasks that may affect the control of the aircraft flight path and attitude, such
+                       as installation, rigging and adjustments of flight controls;
+                   (2) aircraft stability control systems (autopilot, fuel transfer);
+                   (3) tasks that may affect the propulsive force of the aircraft, including
+                       installation of aircraft engines, propellers and rotors; and
+                   (4) overhaul, calibration or rigging of engines, propellers, transmissions and
+                       gearboxes.
+               (b) The procedure should describe which data sources are used to identify critical
+                   maintenance tasks. Several data sources may be used, such as:
+                   (1) information from the design approval holder;
+                   (2) accident reports;
+
+
+
+October 2026                                                                                            Page 488
+UK Regulation (EU) No. 1321/2014                                                            Annex II (Part-145)
+
+
+
+
+                  (3) investigation and follow-up of incidents;
+                  (4) occurrence reporting;
+                  (5) flight data analysis, where this is available from the person or organisation
+                      responsible for the aircraft continuing airworthiness;
+                  (6) results of audits and independent inspections;
+                  (7) monitoring schemes for normal operations, where these are available from
+                      the person or organisation responsible for the aircraft continuing
+                      airworthiness;
+                  (8) feedback from training.
+
+
+       AMC3 145.A.48(c)(2) Performance of maintenance
+                                                                               CAA ORS9 Decision No. 38
+
+       ERROR-CAPTURING METHODS
+               (a) Error-capturing methods are those actions defined by the organisation to
+                   detect maintenance errors that are made when while performing maintenance.
+               (b) The organisation should ensure that the error-capturing methods are adequate
+                   for the work and the disturbance of the system. A combination of several
+                   actions (e.g. visual inspection, operational check, functional test, rigging
+                   check) may be necessary in some cases.
+
+
+       AMC4 145.A.48(c)(2) Performance of maintenance
+                                                                               CAA ORS9 Decision No. 38
+
+       INDEPENDENT INSPECTION
+       Independent inspection is one possible error-capturing method.
+               (a) What is an independent inspection
+                   An independent inspection is an inspection performed by an ‘independent
+                   qualified person’ of a task carried out by an ‘authorised person’, taking into
+                   account that:
+                  (1) the ‘authorised person’ is the person who performs the task or supervises
+                      the task and they assume the full responsibility for the completion of the
+                      task in accordance with the applicable maintenance data;
+                  (2) the ‘independent qualified person’ is the person who performs the
+                      independent inspection and attests the satisfactory completion of the task
+                      and that no deficiencies have been found. The ‘independent qualified
+
+
+
+October 2026                                                                                         Page 489
+UK Regulation (EU) No. 1321/2014                                                             Annex II (Part-145)
+
+
+
+
+                       person’ does not issue a certificate of release to service, therefore they are
+                       not required to hold certification privileges;
+                  (3) the ‘authorised person’ issues the certificate of release to service or signs
+                      off the completion of the task after the independent inspection has been
+                      carried out satisfactorily;
+                  (4) the work card system used by the organisation should record the
+                      identification of both persons and the details of the independent inspection
+                      as necessary before the certificate of release to service or sign-off for the
+                      completion of the task is issued.
+               (b) Qualifications of persons performing independent inspections
+                   The organisation should have procedures to demonstrate that the
+                   ‘independent qualified person’ has been trained and has gained experience in
+                   the specific inspection to be performed. The organisation could consider
+                   making use of, for example:
+                  (1) staff holding a certifying staff or support staff or sign-off authorisation or
+                      equivalent necessary to release or sign off the critical maintenance task;
+                  (2) staff holding a certifying staff or support staff or sign-off authorisation or
+                      equivalent necessary to release or sign off similar task in a product of
+                      similar category and having received specific practical training in the task
+                      to be inspected; or
+                  (3) a commander holding a limited certification authorisation in accordance
+                      with 145.A.30(j)(4) and having received adequate practical training and
+                      having enough experience in the specific task to be inspected and on how
+                      to perform independent inspection.
+               (c) How to perform an independent inspection
+                   An independent inspection should ensure correct assembly, locking and sense
+                   of operation. When inspecting control systems that have undergone
+                   maintenance, the independent qualified person should consider the following
+                   points independently:
+                  (1) all those parts of the system that have actually been disconnected or
+                      disturbed should be inspected for correct assembly and locking;
+                  (2) the system as a whole should be inspected for full and free movement over
+                      the complete range;
+                  (3) cables should be tensioned correctly with adequate clearance at
+                      secondary stops;
+                  (4) the operation of the control system as a whole should be observed to
+                      ensure that the controls are operating in the correct sense;
+
+
+
+
+October 2026                                                                                           Page 490
+UK Regulation (EU) No. 1321/2014                                                             Annex II (Part-145)
+
+
+
+
+                  (5) if different control systems are interconnected so that they affect each
+                      other, all the interactions should be checked through the full range of the
+                      applicable controls; and
+                  (6) software that is part of the critical maintenance task should be checked, for
+                      example: version, compatibility with aircraft configuration.
+               (d) What to do in unforeseen cases when only one person is available
+                   REINSPECTION:
+                  (1) Reinspection is an error-capturing method subject to the same conditions
+                      as an independent inspection is, except that the ‘authorised person’
+                      performing the maintenance task is also acting as ‘independent qualified
+                      person’ and performs the inspection.
+                  (2) Reinspection, as an error-capturing method, should only be performed in
+                      unforeseen circumstances when only one person is available to carry out
+                      the task and perform the independent inspection. The circumstances
+                      cannot be considered unforeseen if the person or organisation has not
+                      assigned a suitable ‘independent qualified person’ to that particular line
+                      station or shift.
+                  (3) The certificate of release to service is issued after the task has been
+                      performed by the ‘authorised person’ and the reinspection has been
+                      carried out satisfactorily. The work card system used by the organisation
+                      should record the identification and the details of the reinspection before
+                      the certificate of release to service for the task is issued.
+
+
+
+=== 145.A.50 (a)-(c) ===
+       145.A.50 Certification of maintenance
+                                                                                    SI 2025 No. 1150
+
+
+
+
+October 2026                                                                                       Page 492
+UK Regulation (EU) No. 1321/2014                                                             Annex II (Part-145)
+
+
+
+
+               (a) A certificate of release to service must be issued by appropriately authorised
+                   certifying staff on behalf of the organisation when it has been verified that all
+                   maintenance ordered has been properly carried out by the organisation in
+                   accordance with the procedures specified in point 145.A.70, taking into
+                   account the availability and use of the maintenance data specified in point
+                   145.A.45 and that there are no known non-compliances which endanger flight
+                   safety.
+               (b) A certificate of release to service must be issued before flight at the completion
+                   of any maintenance.
+               (c) New defects or incomplete maintenance work orders identified during the
+                   above maintenance must be brought to the attention of the person or
+                   organisation responsible for the aircraft's continuing airworthiness for the
+                   specific purpose of obtaining agreement to rectify such defects or completing
+                   the missing elements of the maintenance work order. Where that person or
+                   organisation declines to have such maintenance carried out under this point,
+
+=== M.A.403 ===
+       M.A.403 Aircraft defects
+                                                                                        SI 2025 No. 1150
+
+               (a) Any aircraft defect that hazards seriously the flight safety shall be rectified
+                   before further flight.
+               (b) Except when the MEL is used by the pilot or the certifying staff, only the
+                   certifying staff referred to in point M.A.801(b)(1), in Subpart F of this Annex, in
+                   Annex II (Part-145), in Annex Vd (Part-CAO), or the person authorised in
+                   accordance with point M.A.801(c) can decide, using maintenance data
+                   referred to in point M.A.401, whether an aircraft defect is a serious hazard to
+                   the flight safety and when and which rectification action must be taken before
+                   further flight and which defect rectification can be deferred.
+
+
+
+
+October 2026                                                                                          Page 111
+UK Regulation (EU) No. 1321/2014                                                               Annex I (Part-M)
+
+
+
+
+               (c) Any aircraft defect that would not hazard seriously the flight safety shall be
+                   rectified as soon as practicable, after the date the aircraft defect was first
+                   identified and within any limits specified in the maintenance data or the MEL.
+               (d) Any defect not rectified before flight shall be recorded in the aircraft continuing
+
+=== M.A.303 ===
+       M.A.303 Airworthiness directives
+
+       Any applicable airworthiness directive must be carried out within the requirements of that
+       airworthiness directive, unless otherwise specified by the CAA.
+
+=== 145.A.55(a)(1) ===
+       145.A.55 Record-keeping
+                                                                                       SI 2025 No. 1150
+
+               (a) Maintenance records
+                  (1) The organisation must record the details of the maintenance work that is
+                      carried out within the scope of its approval. As a minimum, the
+                      organisation must retain all the records that are necessary to prove that all
+                      the requirements have been met for the issue of the certificate of release to
+                   particular maintenance task; they exclude the engineering design of repairs
+                   and modifications.
+               (e) The organisation must provide a common work card or worksheet system to be
+                   used throughout the relevant parts of the organisation. In addition, the
+                   organisation must either accurately transcribe the maintenance data referred
+                   to in points (b) and (d) onto such work cards or worksheets, or make precise
+                   reference to the particular maintenance task or tasks contained in that
+                   maintenance data. Work cards and worksheets may be computer generated
+
+
+

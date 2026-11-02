@@ -1,0 +1,5 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -5 +5 @@
+-[CTX/AIRCRAFT] Type: Aerowing AW-7 (fictional twin-turboprop). Registration: G-SYN8 (fictional). Airframe hours at pack review: 11,805 FH.
++[CTX/AIRCRAFT] Type: Aerowing AW-7 (fictional twin-turboprop). Registration: G-SYN8 (fictional). Airframe hours at pack review: 11,905 FH.

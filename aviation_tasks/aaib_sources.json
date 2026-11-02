@@ -1,0 +1,68 @@
+{
+  "_note": "Links to the official AAIB report pages and PDFs, plus the short quotes the task notes rely on. The full report texts are not included in this repository (AAIB reports are published under the UK Open Government Licence v3.0; quotes remain under the publishers' terms). Quotes were copied from the AAIB PDFs on 1 Nov 2026 and re-checked against the official PDFs on 2 Nov 2026 with `python3 verify_sources.py --fetch`. Whitespace, hyphen and quote-mark variants are normalised in the check. The AAIB typo 'compete' (for 'complete') in the G-CIVX quote is kept as published.",
+  "A1": {
+    "title": "AAIB Bulletin 10/2016: Boeing 747-436, G-CIVX (reference EW/C2016/01/04)",
+    "page_url": "https://www.gov.uk/aaib-reports/aaib-investigation-to-boeing-747-436-g-civx",
+    "pdf_url": "https://assets.publishing.service.gov.uk/media/57d6bad740f0b65264000031/Boeing_747-436__G-CIVX_10-16.pdf",
+    "aircraft": "Boeing 747-436",
+    "occurrence_date": "2016-01-30",
+    "report_type": "AAIB field investigation (Bulletin)",
+    "quotes": [
+      "did not have time to compete the function checks, and the task cards were left uncertified.",
+      "An inadequate handover between the night shift and the day shift."
+    ]
+  },
+  "A2": {
+    "title": "AAIB Bulletin 7/2012: ATR72-202, EI-SLG (reference EW/C2011/03/04)",
+    "page_url": "https://www.gov.uk/aaib-reports/atr72-202-ei-slg-15-march-2011",
+    "pdf_url": "https://assets.digital.cabinet-office.gov.uk/media/5422fddc40f0b6134200086d/ATR72-202_EI-SLG_07-12.pdf",
+    "aircraft": "ATR72-202",
+    "occurrence_date": "2011-03-15",
+    "report_type": "AAIB field investigation (Bulletin, serious incident; Irish-registered aircraft, UK investigation)",
+    "quotes": [
+      "an independent (duplicate) inspection must be performed.",
+      "The required independent inspection of the work and the operational test of the TLU system were not carried out."
+    ]
+  },
+  "A3": {
+    "title": "AAIB Bulletin 2/2001: Agusta A109E Power, G-TVAA (reference EW/C2000/6/6)",
+    "page_url": "https://www.gov.uk/aaib-reports/agusta-a109e-power-g-tvaa-17-june-2000",
+    "pdf_url": "https://assets.digital.cabinet-office.gov.uk/media/5422f215e5274a13170003d7/dft_avsafety_pdf_500752.pdf",
+    "aircraft": "Agusta A109E Power",
+    "occurrence_date": "2000-06-17",
+    "report_type": "AAIB field investigation (Bulletin)",
+    "quotes": [
+      "some of this had been expended in tightening the nut against the thread run-out, leaving the component stack-up essentially loose."
+    ]
+  },
+  "A5": {
+    "title": "AAIB Bulletin 10/2019: Boeing 737-4Q8, G-JMCR (reference EW/C2018/10/03; correction in Bulletin 12/2019 concerns only the count of safety recommendations)",
+    "page_url": "https://www.gov.uk/aaib-reports/aaib-investigation-to-boeing-737-4q8-g-jmcr",
+    "pdf_url": "https://assets.publishing.service.gov.uk/media/5f463d268fa8f51f7db10abd/Boeing_737-4Q8__G-JMCR_10-19.pdf",
+    "aircraft": "Boeing 737-4Q8",
+    "occurrence_date": "2018-10-12",
+    "report_type": "AAIB field investigation (Bulletin)",
+    "quotes": [
+      "The RIE for the defect on Gen 1 should only have been granted in exceptional circumstances."
+    ]
+  },
+  "A8": {
+    "title": "AAIB Bulletin 2/2010: Avro 146-RJ100, G-BXAR (reference EW/C2009/02/03)",
+    "page_url": "https://www.gov.uk/aaib-reports/avro-146-rj100-g-bxar-13-february-2009",
+    "pdf_url": "https://assets.digital.cabinet-office.gov.uk/media/5422edc2ed915d137100019d/Avro_146-RJ100__G-BXAR_02-10.pdf",
+    "aircraft": "Avro 146-RJ100",
+    "occurrence_date": "2009-02-13",
+    "report_type": "AAIB field investigation (Bulletin)",
+    "quotes": [
+      "had not been properly embodied at previous overhaul by Messier Services Inc, despite their overhaul records showing its incorporation."
+    ]
+  },
+  "_reserve_not_used": {
+    "title": "AAIB Bulletin 4/2019: Cessna 172M Skyhawk II, N9085H (Bermuda, 30 April 2018)",
+    "page_url": "https://www.gov.uk/aaib-reports/aaib-investigation-to-cessna-172m-skyhawk-ii-n9085h",
+    "pdf_url": "https://assets.publishing.service.gov.uk/media/5f5a2f0ed3bf7f723d08be71/Cessna_172M_Skyhawk_II_N9085H_04-19.pdf",
+    "quotes": [
+      "a duplicate inspection of the elevator trim system was not carried out."
+    ]
+  }
+}

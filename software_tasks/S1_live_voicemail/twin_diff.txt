@@ -1,0 +1,2 @@
+-[FIELD/1] **Silent forwarding failure:** the test call produced no text and no log entry.
++[FIELD/1] **Forwarding test:** the test call produced a text and a `customer_calls` log entry.

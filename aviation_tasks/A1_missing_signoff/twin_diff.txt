@@ -1,0 +1,5 @@
+--- clean/pack.md
++++ faulty/pack.md
+@@ -30 +30 @@
+-[TC-32-41-01/STEP-07] Rig system: fit rig pins in L and R selector valve quadrants, adjust to AMM 32-41-01, remove pins and confirm they insert freely. | Stamp: AUTH-02 | Date: 2026-03-13
++[TC-32-41-01/STEP-07] Rig system: fit rig pins in L and R selector valve quadrants, adjust to AMM 32-41-01, remove pins and confirm they insert freely. | Stamp: ______ | Date: ______
