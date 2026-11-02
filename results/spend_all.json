@@ -1,0 +1,64 @@
+{
+ "by_phase": {
+  "v1_main_run_(anthropic+openai, incl. smoke)": {
+   "anthropic": {
+    "usd": 4.1015,
+    "calls": 50,
+    "in_tok": 90990,
+    "out_tok": 63177
+   },
+   "openai": {
+    "usd": 1.4998,
+    "calls": 50,
+    "in_tok": 63883,
+    "out_tok": 17220
+   }
+  },
+  "v1_argon_(smoke+full+regrade_of_GPT)": {
+   "google": {
+    "usd": 0.3323,
+    "calls": 49,
+    "in_tok": 59835,
+    "out_tok": 21261
+   },
+   "anthropic": {
+    "usd": 0.1827,
+    "calls": 17,
+    "in_tok": 10869,
+    "out_tok": 1480
+   },
+   "google_of_which_regrade_of_GPT": {
+    "usd": 0.0213,
+    "calls": 16
+   }
+  },
+  "v2_all_three": {
+   "openai": {
+    "usd": 1.453,
+    "calls": 48,
+    "in_tok": 62130,
+    "out_tok": 16634
+   },
+   "google": {
+    "usd": 0.3289,
+    "calls": 48,
+    "in_tok": 58321,
+    "out_tok": 21229
+   },
+   "anthropic": {
+    "usd": 3.8869,
+    "calls": 48,
+    "in_tok": 93337,
+    "out_tok": 59071
+   }
+  }
+ },
+ "total_by_provider": {
+  "anthropic": 8.1711,
+  "openai": 2.9528,
+  "google": 0.6612
+ },
+ "total_usd": 11.7852,
+ "cap_usd": 100.0,
+ "note": "List-price estimate from reported token usage (Anthropic cache writes x1.25, reads x1.0); an upper bound on invoices. Includes grader calls. Anthropic includes the $0.0328 logged adjustment."
+}

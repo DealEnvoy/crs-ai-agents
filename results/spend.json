@@ -1,0 +1,19 @@
+{
+ "anthropic": {
+  "main_run_incl_smoke": 4.1015,
+  "as_grader_of_Argon_incl_smoke": 0.1827,
+  "total": 4.2842
+ },
+ "openai": {
+  "main_run_incl_smoke": 1.4998,
+  "total": 1.4998
+ },
+ "google": {
+  "argon_smoke_full_and_regrade_of_GPT": 0.3323,
+  "of_which_regrade_of_GPT": 0.0213,
+  "calls": 49,
+  "total": 0.3323
+ },
+ "note": "v1 only. Ledger = list-price estimate from reported token usage (upper bound). v2 spend is in results/v2/spend.json; everything in results/spend_all.json.",
+ "total_usd": 6.1163
+}

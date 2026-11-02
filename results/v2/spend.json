@@ -1,0 +1,16 @@
+{
+ "openai": {
+  "usd": 1.453,
+  "calls": 48
+ },
+ "google": {
+  "usd": 0.3289,
+  "calls": 48
+ },
+ "anthropic": {
+  "usd": 3.8869,
+  "calls": 48
+ },
+ "total_usd": 5.6688,
+ "note": "v2 only (runs started 01:41 GMT 2 Nov 2026). Cumulative across v1+v2: see results/spend_all.json."
+}

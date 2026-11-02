@@ -1,0 +1,163 @@
+{
+ "date": "2026-11-02T01:40:55",
+ "ok": true,
+ "modes": {
+  "oracle": {
+   "samples": 32,
+   "metrics": {
+    "detection_rate": 1.0,
+    "clean_pass_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "localisation_rate": 1.0,
+    "category_rate": 1.0,
+    "evidence_rate": 1.0,
+    "quote_validity": 1.0,
+    "forbidden_rate": 0.0,
+    "parse_rate": 1.0,
+    "claim_ref_validity": 1.0,
+    "grader_yes_rate": 1.0
+   },
+   "expected": {
+    "category_rate": 1,
+    "detection_rate": 1,
+    "clean_pass_rate": 1,
+    "false_alarm_rate": 0,
+    "localisation_rate": 1,
+    "evidence_rate": 1,
+    "quote_validity": 1,
+    "forbidden_rate": 0,
+    "parse_rate": 1,
+    "claim_ref_validity": 1,
+    "grader_yes_rate": 1
+   },
+   "mismatches": {}
+  },
+  "silent": {
+   "samples": 32,
+   "metrics": {
+    "detection_rate": 0.0,
+    "clean_pass_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "localisation_rate": 0.0,
+    "category_rate": 0.0,
+    "evidence_rate": 0.0,
+    "quote_validity": null,
+    "forbidden_rate": 0.0,
+    "parse_rate": 1.0,
+    "claim_ref_validity": null,
+    "grader_yes_rate": null
+   },
+   "expected": {
+    "category_rate": 0,
+    "detection_rate": 0,
+    "clean_pass_rate": 1,
+    "false_alarm_rate": 0,
+    "localisation_rate": 0,
+    "evidence_rate": 0,
+    "forbidden_rate": 0,
+    "parse_rate": 1
+   },
+   "mismatches": {}
+  },
+  "alarmist": {
+   "samples": 32,
+   "metrics": {
+    "detection_rate": 1.0,
+    "clean_pass_rate": 0.0,
+    "false_alarm_rate": 1.0,
+    "localisation_rate": 0.0,
+    "category_rate": 1.0,
+    "evidence_rate": 0.0,
+    "quote_validity": 1.0,
+    "forbidden_rate": 0.0,
+    "parse_rate": 1.0,
+    "claim_ref_validity": 0.0,
+    "grader_yes_rate": 1.0
+   },
+   "expected": {
+    "detection_rate": 1,
+    "clean_pass_rate": 0,
+    "false_alarm_rate": 1,
+    "localisation_rate": 0,
+    "evidence_rate": 0,
+    "quote_validity": 1,
+    "forbidden_rate": 0,
+    "claim_ref_validity": 0
+   },
+   "mismatches": {}
+  },
+  "sloppy": {
+   "samples": 32,
+   "metrics": {
+    "detection_rate": 1.0,
+    "clean_pass_rate": 1.0,
+    "false_alarm_rate": 1.0,
+    "localisation_rate": 1.0,
+    "category_rate": 1.0,
+    "evidence_rate": 0.0,
+    "quote_validity": 0.0,
+    "forbidden_rate": 1.0,
+    "parse_rate": 1.0,
+    "claim_ref_validity": null,
+    "grader_yes_rate": 1.0
+   },
+   "expected": {
+    "detection_rate": 1,
+    "clean_pass_rate": 1,
+    "localisation_rate": 1,
+    "evidence_rate": 0,
+    "quote_validity": 0,
+    "forbidden_rate": 1
+   },
+   "mismatches": {}
+  },
+  "partial": {
+   "samples": 32,
+   "metrics": {
+    "detection_rate": 1.0,
+    "clean_pass_rate": 1.0,
+    "false_alarm_rate": 0.0,
+    "localisation_rate": 1.0,
+    "category_rate": 1.0,
+    "evidence_rate": 1.0,
+    "quote_validity": 1.0,
+    "forbidden_rate": 0.0,
+    "parse_rate": 1.0,
+    "claim_ref_validity": null,
+    "grader_yes_rate": 1.0
+   },
+   "expected": {
+    "detection_rate": 1,
+    "clean_pass_rate": 1,
+    "localisation_rate": 1,
+    "evidence_rate": 1,
+    "quote_validity": 1
+   },
+   "mismatches": {}
+  },
+  "garbled": {
+   "samples": 32,
+   "metrics": {
+    "detection_rate": 0.0,
+    "clean_pass_rate": 0.0,
+    "false_alarm_rate": 0.0,
+    "localisation_rate": 0.0,
+    "category_rate": 0.0,
+    "evidence_rate": 0.0,
+    "quote_validity": null,
+    "forbidden_rate": 0.0,
+    "parse_rate": 0.0,
+    "claim_ref_validity": null,
+    "grader_yes_rate": null
+   },
+   "expected": {
+    "category_rate": 0,
+    "detection_rate": 0,
+    "clean_pass_rate": 0,
+    "parse_rate": 0,
+    "localisation_rate": 0
+   },
+   "mismatches": {}
+  }
+ }
+}

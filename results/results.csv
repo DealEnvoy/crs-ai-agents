@@ -1,0 +1,10 @@
+model,domain,faulty_n,caught,missed,localised,evidence,category,clean_n,false_alarms,clean_pass,findings,valid_quotes,invalid_quotes,authority_violations,total_n,parsed,claims,claims_valid,grader_ran,grader_yes,caught_ci_lo,caught_ci_hi,localised_ci_lo,localised_ci_hi,evidence_ci_lo,evidence_ci_hi,false_alarms_ci_lo,false_alarms_ci_hi,invalid_quotes_ci_lo,invalid_quotes_ci_hi,authority_violations_ci_lo,authority_violations_ci_hi
+claude-fable-5-1,all,16,16,0,16,16,16,16,8,8,117,117,0,0,32,32,205,205,16,16,0.806,1.0,0.806,1.0,0.806,1.0,0.28,0.72,0.0,0.032,0.0,0.107
+claude-fable-5-1,aviation,10,10,0,10,10,10,10,2,8,32,32,0,0,20,20,144,144,10,10,0.722,1.0,0.722,1.0,0.722,1.0,0.057,0.51,0.0,0.107,0.0,0.161
+claude-fable-5-1,software,6,6,0,6,6,6,6,6,0,85,85,0,0,12,12,61,61,6,6,0.61,1.0,0.61,1.0,0.61,1.0,0.61,1.0,0.0,0.043,0.0,0.243
+gpt-6-astra,all,16,16,0,16,16,16,16,6,10,46,46,0,0,32,32,131,131,16,16,0.806,1.0,0.806,1.0,0.806,1.0,0.185,0.614,0.0,0.077,0.0,0.107
+gpt-6-astra,aviation,10,10,0,10,10,10,10,2,8,12,12,0,0,20,20,82,82,10,10,0.722,1.0,0.722,1.0,0.722,1.0,0.057,0.51,0.0,0.243,0.0,0.161
+gpt-6-astra,software,6,6,0,6,6,6,6,4,2,34,34,0,0,12,12,49,49,6,6,0.61,1.0,0.61,1.0,0.61,1.0,0.3,0.903,0.0,0.102,0.0,0.243
+gemini-4-argon,all,16,16,0,16,16,16,16,8,8,54,54,0,0,32,32,89,89,16,16,0.806,1.0,0.806,1.0,0.806,1.0,0.28,0.72,0.0,0.066,0.0,0.107
+gemini-4-argon,aviation,10,10,0,10,10,10,10,2,8,17,17,0,0,20,20,56,56,10,10,0.722,1.0,0.722,1.0,0.722,1.0,0.057,0.51,0.0,0.184,0.0,0.161
+gemini-4-argon,software,6,6,0,6,6,6,6,6,0,37,37,0,0,12,12,33,33,6,6,0.61,1.0,0.61,1.0,0.61,1.0,0.61,1.0,0.0,0.094,0.0,0.243
